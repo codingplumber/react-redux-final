@@ -47,58 +47,63 @@ const initialState = {
     ],
     loadedContact: {
         id: '',
-        name: 'j',
-        email: 'j',
-        phone: 'j'
+        name: '',
+        email: '',
+        phone: ''
     }
 }
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
+        case actionTypes.PAGE_LOAD:
+            return {
+                ...state,
+                loadedContact: {
+                    ...state.loadedContact,
+                    id: state.contacts[0].id,
+                    name: state.contacts[0].name,
+                    email: state.contacts[0].email,
+                    phone: state.contacts[0].phone
+                }
+            }
+
         case actionTypes.CHANGE_LOADED_CONTACT:
-            // action.e.preventDefault()
-            console.log('[E.TARGET.VALUE]', action.payload.value)
-            console.log('[E.TARGET.NAME]', action.payload.name)
+            console.log(action.name)
+            console.log(action.value)
             return {
                 ...state,
                 loadedContact: {
                     ...state.loadedContact,
                     [action.payload.name]: action.payload.value
                 }
-                // loadedContact : {
-                //     id : {
-                //         id: new Date()
-                //     },
-                //     name: {
-                //         name: action.e.target.value
-                //     }
-                // }
             }
 
         case actionTypes.ADD_CONTACT:
-            console.log(action.payload.name)
-            console.log(action.payload.email)
-            console.log(action.payload.phone)
-            const id = new Date();
-            console.log(id)
+            // const updatedLoadedContact = Object.assign({}, loadedContact, {id: new Date()});
+            const updatedLoadedContact = {
+                // ...state, 
+                // loadedContact: {
+                    ...state.loadedContact, 
+                    id: new Date()
+                // }
+            };
+            return {
+                ...state,      
+                contacts: state.contacts.concat(updatedLoadedContact)
+            }
+
+        case actionTypes.DELETE_CONTACT:
+            const updatedContacts = state.contacts.filter(contact => contact.id !== action.id);
             return {
                 ...state,
-                loadedContact : {
+                contacts: updatedContacts,
+                loadedContact: {
                     ...state.loadedContact,
-                    id : {
-                        id: id
-                    },
-                    name : {
-                        name: action.payload.name
-                    },
-                    email : {
-                        email: action.payload.email
-                    },
-                    phone : {
-                        phone: action.payload.phone
-                    }
-                },
-                contacts: state.contacts.concat(state.loadedContact)
+                    id: updatedContacts.length > 0 ? updatedContacts[0].id : '',
+                    name: updatedContacts.length > 0 ? updatedContacts[0].name : '',
+                    email: updatedContacts.length > 0 ? updatedContacts[0].email : '',
+                    phone: updatedContacts.length > 0 ? updatedContacts[0].phone : ''
+                }
             }
 
         case actionTypes.CHANGE_CONTACT:
@@ -106,6 +111,19 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loadedContact: contact[0]
+            }
+
+        case actionTypes.UPDATE_CONTACT:
+            const updatedContact = state.contacts.map(contact => {
+                if (contact.id === state.loadedContact.id) {
+                    contact = state.loadedContact;
+                    console.log(contact, state.loadedContact)
+                }
+                return contact;
+            })
+            return {
+                ...state,
+                contacts: updatedContact
             }
         
         default: 
