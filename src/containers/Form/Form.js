@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import * as actionTypes from '../../store/actions/actions';
-import FormInputs from './FormInputs';
+import FormInputs from '../../components/FormInputs/FormInputs';
 import styles from '../../Styles/Styles';
 
 class Form extends Component {

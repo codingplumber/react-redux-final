@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actionTypes from '../../store/actions/actions';
 import Contacts from '../../components/Contacts/Contacts';
-import Form from '../../components/Form/Form';
+import Form from '..//Form/Form';
 import styles from '../../Styles/Styles';
 
 class Controller extends Component {
