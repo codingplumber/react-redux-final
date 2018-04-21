@@ -55,7 +55,6 @@ class Form extends Component {
 
 const mapStateToProps = state => {
     return {
-        contacts: state.contacts,
         person: state.loadedContact
     }
 }
