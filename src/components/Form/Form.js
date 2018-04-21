@@ -20,7 +20,6 @@ class Form extends Component {
     }
 
     render() {
-        // console.log(this.props.person)
         return (
             <div style={styles.formWrapper}>
                 <form onSubmit={ this.handleSubmit }>
@@ -101,17 +100,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(Form);
 //         onFocus={ this.onFocus }
 //         type='text' name='phone' />
 // </div>
-
-
-// <div style={styles.formInputDiv}>
-//     <FormInputs 
-//         names={[ 'name', 'email', 'phone' ]}
-//         labels={[ 'Name:', 'Email:', 'Phone:' ]}
-//         contactInfo={[ this.props.person.name, this.props.person.email, this.props.person.phone ]}
-//         change={ (e) => this.handleChange(e) }
-//         focus={ this.props.focus } />
-// </div>
-
-
-// ADD_CONTACT
-// , payload: {name, email, phone}

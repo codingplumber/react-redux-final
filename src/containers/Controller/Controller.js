@@ -38,8 +38,3 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Controller);
 
-
-// Form
-// change={ this.props.onLoadedContactChange }
-// submit={ this.handleSubmit }
-// focus={ this.onFocus }

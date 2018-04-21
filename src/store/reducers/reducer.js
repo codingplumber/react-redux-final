@@ -68,8 +68,6 @@ const reducer = (state = initialState, action) => {
             }
 
         case actionTypes.CHANGE_LOADED_CONTACT:
-            console.log(action.name)
-            console.log(action.value)
             return {
                 ...state,
                 loadedContact: {
