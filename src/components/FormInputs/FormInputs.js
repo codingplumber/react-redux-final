@@ -4,7 +4,6 @@ import Aux from '../../hoc/Aux';
 import styles from '../../Styles/Styles';
 
 const inputs = props => {
-    console.log(props)
     const input = props.names.map((name, i) => {
         return (
             <div style={styles.formInputDiv} key={ i }>
@@ -17,11 +16,7 @@ const inputs = props => {
             </div>             
         );
     });
-    return (
-        <Aux>
-            {input}
-        </Aux>
-    );
+    return <Aux>{input}</Aux>
 }
 
 export default inputs;

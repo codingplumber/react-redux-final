@@ -22,15 +22,14 @@ class Form extends Component {
     render() {
         return (
             <div style={styles.formWrapper}>
-                <form onSubmit={ this.handleSubmit }>
-                    
+                <form onSubmit={ this.handleSubmit }>                   
                     <FormInputs 
                         names={[ 'name', 'email', 'phone' ]}
                         labels={[ 'Name:', 'Email:', 'Phone:' ]}
                         contactInfo={[ this.props.person.name, this.props.person.email, this.props.person.phone ]}
                         change={ (e) => this.props.onLoadedContactChange(e.target.name, e.target.value) }
-                        focus={ this.onFocus } />
-                   
+                        focus={ this.onFocus } />                  
+                    
                     <div style={styles.buttonDiv}>
                         <input 
                             style={styles.formUpdate} 
@@ -41,6 +40,7 @@ class Form extends Component {
                             value='Delete' type='submit' 
                             onClick={ () => this.props.onContactDelete(this.props.person.id) } />
                     </div>
+                    
                     <div>
                         <input 
                             style={styles.formAdd} 

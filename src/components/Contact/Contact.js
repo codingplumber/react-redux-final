@@ -1,5 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 
 import Aux from '../../hoc/Aux';
 import styles from '../../Styles/Styles';
@@ -23,5 +22,3 @@ const contact = props => {
 };
 
 export default contact;
-
-// onClick={ () => props.changeContact(contact) }

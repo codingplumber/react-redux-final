@@ -8,8 +8,6 @@ import App from './App';
 import reducer from './store/reducers/reducer';
 import registerServiceWorker from './registerServiceWorker';
 
-// const store = createStore(reducer);
-
 // middleware
 const logger = store => {
     // next is a function to let the action continue on to the reducer
@@ -34,7 +32,9 @@ ReactDOM.render(
     <Provider store={store}>
         <App />
     </Provider>,
-    document.getElementById('root'));
+    document.getElementById('root')
+);
+
 registerServiceWorker();
 
 // put Router between Provider and App
