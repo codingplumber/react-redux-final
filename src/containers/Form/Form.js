@@ -11,11 +11,11 @@ class Form extends Component {
         this.props.onPageLoad();
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = event => {
         event.preventDefault();
     }
 
-    onFocus = (event) => {
+    onFocus = event => {
         event.target.value = '';
     }
 
