@@ -35,17 +35,17 @@ class Form extends Component {
                         <input 
                             style={styles.formUpdate} 
                             value='Update' type='submit' 
-                            onClick={ () => this.props.onContactUpdate() } />
+                            onClick={ this.props.onContactUpdate } />
                         <input 
                             style={styles.formDelete} 
                             value='Delete' type='submit' 
-                            onClick={ (e) => this.props.onContactDelete(this.props.person.id) } />
+                            onClick={ () => this.props.onContactDelete(this.props.person.id) } />
                     </div>
                     <div>
                         <input 
                             style={styles.formAdd} 
                             value='Add New Contact' type='submit' 
-                            onClick={ () => this.props.onContactAdd() } />
+                            onClick={ this.props.onContactAdd } />
                     </div>
                 </form>
             </div>
