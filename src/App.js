@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './components/Header/Header';
-import Controller from './containers/Controller/Controller';
+import Cockpit from './components/Cockpit/Cockpit';
 import styles from './Styles/Styles';
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div style={styles.app}>
         <Header />
-        <Controller />
+        <Cockpit />
       </div>
     );
   }
